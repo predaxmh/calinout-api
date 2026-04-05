@@ -1,0 +1,6 @@
+@API_Calinout_Project_HostAddress = http://localhost:5218
+
+GET {{API_Calinout_Project_HostAddress}}/Auth/
+Accept: application/json
+
+###
