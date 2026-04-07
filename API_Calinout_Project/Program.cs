@@ -218,7 +218,7 @@ await DbInitializer.SeedAsync(app);
 app.UseExceptionHandler();
 
 // 2.1 Developer Tools
-//if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
