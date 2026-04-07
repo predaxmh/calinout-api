@@ -4,9 +4,11 @@ using API_Calinout_Project.Services.Features;
 using API_Calinout_Project.Services.Interfaces.Features;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace API_Calinout_Project.Controllers.V1
 {
+    [EnableRateLimiting("UserRequestsLimit")]
     [Authorize]
     [ApiController]
     [Route("api/V1/[controller]")]
@@ -15,12 +17,12 @@ namespace API_Calinout_Project.Controllers.V1
     public class DailyLogsController : BaseApiController
     {
         private readonly IDailyLogService _dailyLogService;
-       
+
 
         public DailyLogsController(IDailyLogService dailyLogService)
         {
             _dailyLogService = dailyLogService;
-           
+
         }
 
         /// <summary>

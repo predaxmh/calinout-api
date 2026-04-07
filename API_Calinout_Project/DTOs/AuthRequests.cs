@@ -17,7 +17,7 @@ namespace API_Calinout_Project.DTOs
         [Required, EmailAddress]
         public required string Email { get; set; }
 
-        [Required, MinLength(6)]
+        [Required, MinLength(6), MaxLength(14)]
         public required string Password { get; set; }
 
         [Compare(nameof(Password))]
@@ -29,13 +29,13 @@ namespace API_Calinout_Project.DTOs
         [Required, EmailAddress]
         public required string Email { get; set; }
 
-        [Required, MinLength(6)]
+        [Required, MinLength(6), MaxLength(14)]
         public required string Password { get; set; }
     }
 
     public class RefreshTokenRequestDto
     {
-        [Required, MinLength(12)]
+        [Required, MinLength(12), MaxLength(90)]
         public required string RefreshToken { get; set; }
     }
 

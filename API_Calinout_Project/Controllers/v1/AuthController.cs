@@ -2,9 +2,11 @@
 using API_Calinout_Project.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace API_Calinout_Project.Controllers.V1
 {
+    [EnableRateLimiting("LoginPolicy")]
     [ApiController]
     [Route("api/V1/[controller]")]
     [Produces("application/json")]
@@ -62,7 +64,7 @@ namespace API_Calinout_Project.Controllers.V1
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<AuthResponseDto>> Refresh([FromBody] RefreshTokenRequestDto request, CancellationToken ct)
         {
-           
+
             var result = await _authService.RefreshTokenAsync(request, ct);
 
             return HandleResult(result);

@@ -16,11 +16,11 @@ namespace API_Calinout_Project.Entities
 
         public string UserId { get; set; } = null!;
         [Required, MaxLength(200)]
-        public string Name { get; set; } = null!; 
-        public bool IsTemplate { get; set; }     
-        public DateTime? ConsumedAt { get; set; } 
+        public string Name { get; set; } = null!;
+        public bool IsTemplate { get; set; }
+        public DateTime? ConsumedAt { get; set; }
 
-        
+
         public decimal TotalCalories { get; set; }
         public decimal TotalCarbs { get; set; }
         public decimal TotalProtein { get; set; }
